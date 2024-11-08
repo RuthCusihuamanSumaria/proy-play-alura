@@ -1,0 +1,190 @@
+/*Cabecera*/
+.cabecera__container{
+    display: flex;/*iniciar con flexbox , para que los elmentos se acomoden uno al lado de otro*/
+    justify-content: space-between; /*para que sea responsive y tenga un espacio entre los iconos*/
+    align-items: center;/*para que no este pegado junto al navegador y esten centrado*/
+    position: fixed;/*posicion fija cuando hagamos el scroll*/
+    top: 0;/*indicar la coordenada en que posicion va estar fija, la cabecera*/
+    /*margin rigth: dar un 200px por ejemplo da espacio entre un elemento y otro*/
+
+}
+
+.cabecera__buscar__item{
+    display:none;/*para ocultar none*/
+
+}
+/*rodapie*/
+.rodapie__container{
+    display: flex;/*coloca los elementos unos al lado de otro*/
+    /*flex-direction: column;/*para cambiarl el eje de los elementos en una sola columna*/
+    /*flex-wrap: wrap;
+    */
+    flex-flow: column wrap;
+
+}
+
+/*seccion superior*/
+.superior__seccion__container{
+    display:flex;/*los elementos se posicionen una al lado del otro*/
+    align-items: center;/*para que los elementos se centren en el centro del contenedor*/
+    white-space: nowrap;
+    overflow: scroll;/*scroll para poder ver todos los elementos*/
+    gap:15px;/*espacio entre los elementos del menu*/
+
+}
+
+/*Menu*/
+.menu__container{
+    position: fixed;/**/
+    bottom: 0%;/*para que el menu baje y no este en la parte superior*/
+    height: 75px;/*ancho de la pagina*/
+    width: 100%;
+
+}
+
+.menu__lista{
+    display: flex;
+    justify-content: space-around;/* los elementos va a ganar un espacio entre ellos*/
+    height: 100%;/*ubiquemelor los elementos del menu*/
+}
+
+.menu__lista li{
+    align-self: center;/**/
+}
+
+.menu__itens{
+    display: flex;
+    flex-direction: column;/*para que agruoe en columna*/
+    gap: 5px;
+}
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+
+
+@media(min-width:834px){/*al menos 834 px  de ancho para que se vea */
+    /*puntos de ruptura son los que estan en los parentesis, se va romper el visual*/
+
+
+    /*cebecera*/
+    .cabecera__buscar__item{
+        display: block;
+    }
+
+    /*rodapie*/
+    .rodapie__container{
+        justify-content: space-between;
+    }
+
+}
+
+@media (min-width: 834px) {
+
+    /*cabecera*/
+    .cabecera__buscar__item{
+        display: block;
+    }
+
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+    
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+    /*seccion VIDEOS*/
+    .videos__item{
+        height: 303px;
+        width: 280px;
+        flex-grow: 1;
+
+    }
+
+    .videos__container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+       
+    }
+     /* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */ 
+
+.descripcion-video {
+    margin-top: 1rem;
+    display: flex;
+    align-items: start; 
+    
+}
+
+.descripcion-video img {
+    margin-right: 1rem; 
+    flex-shrink: 0;  /*  Evita que la imagen se reduzca */
+   
+}
+
+.detalles__video {
+    flex-direction: column;
+    text-align:left;
+
+}
+
+.detalles__video h3{
+    margin-bottom: 10px;
+}
+
+    /*rodapie*/
+    .rodapie__container{
+        justify-content: space-between;
+    }
+    
+}
+    
+
+@media(min-width:1440px){
+        
+    .menu__container{
+        width: 239px; /*ampliar el ancho del menu*/
+        overflow: scroll;
+
+        }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+        display: flex;
+    }
+
+    .menu__lista{
+        height: auto;/*vidualizar la lista del menu*/
+        padding: 20px 17px 20px 15px;
+        gap: 15px;
+    }
+
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse;
+    }
+
+    .menu__itens{
+        flex-direction: row;/*texto al lado del icono*/
+        gap: 15px;/*para que haya un espacion entre el icono y su texto*/
+        align-items: center;/*centrar el icono y el texto a la misma altura*/
+
+    }
+    .videojuegos{
+        order:3;
+    }
+    .peliculas{
+        order: 2;
+    }
+    .premium{
+        order:1;
+    }
+}
+
